@@ -1,0 +1,35 @@
+body {
+	text-align: center;
+}
+
+button {
+	text-align: center;
+	width: 200px;
+	margin-bottom: 5px;
+}
+
+#start {
+	margin-top: 8px;
+}
+
+#timer {
+	display: none;
+	margin-top: 100px;
+}
+
+#gameboard {
+	display: inherit;
+}
+
+#gameboard {
+	margin-top: 150px;
+}
+
+#questions {
+	display: none;
+	margin-top: 25px;
+}
+
+#text {
+	margin-bottom: 20px;
+}
