@@ -2,29 +2,41 @@ $(document).ready(function() {
 	
 	var question1 = {
 		text: "What is your Name?", 
-		answer: "Arthur, King of the Britons.",
-		wrong: ["Sir Galahad of Camelot.", "Sir Lancelot of Camelot.", "Sir Robin of Camelot."],
+		answer: [
+			"<div class='text-center btn btn-info btn-block' data-correct='true'>Arthur, King of the Britons.</div>", 
+			"<div class='text-center btn btn-info btn-block'>Sir Galahad of Camelot.</div>", 
+			"<div class='text-center btn btn-info btn-block'>Sir Lancelot of Camelot.</div>", 
+			"<div class='text-center btn btn-info btn-block'>Sir Robin of Camelot.</div>"],
 		correct: false,
 	}
 
 	var question2 = {
 		text: "What is your Quest?", 
-		answer: "To seek the Holy Grail.",
-		wrong: ["To seek the Holey Grail.", "To seek the Whole Grail.", "To eat cheese and be merry."],
-		correct: false,
-	}
-
-	var question4 = {
-		text: "What is your favorite color?", 
-		answer: "Blue",
-		wrong: ["Red", "Green", "Yellow."],
+		answer: [
+			"<div class='text-center btn btn-info btn-block' data-correct='true'>To seek the Holy Grail.</div>",
+			"<div class='text-center btn btn-info btn-block'>To seek the Holey Grail.</div>",
+			"<div class='text-center btn btn-info btn-block'>To seek the Whole Grail.</div>",
+			"<div class='text-center btn btn-info btn-block'>To eat cheese and be merry.</div>"],
 		correct: false,
 	}
 
 	var question3 = {
+		text: "What is your favorite color?", 
+		answer: [
+			"<div class='text-center btn btn-info btn-block' data-correct='true'>Blue</div>",
+			"<div class='text-center btn btn-info btn-block'>Red</div>", 
+			"<div class='text-center btn btn-info btn-block'>Green</div>", 
+			"<div class='text-center btn btn-info btn-block'>Yellow</div>"],
+		correct: false,
+	}
+
+	var question4 = {
 		text: "What is the average air speed velocity of an unladen swallow?", 
-		answer: "Is that an African or European Swallow?",
-		wrong: ["46 mph", "10 mph", "Lightspeed"],
+		answer: [
+			"<div class='text-center btn btn-info btn-block' data-correct='true'>Is that an African or European Swallow?</div>",
+			"<div class='text-center btn btn-info btn-block'>46 mph</div>", 
+			"<div class='text-center btn btn-info btn-block'>10 mph</div>", 
+			"<div class='text-center btn btn-info btn-block'>Lightspeed</div>"],
 		correct: false,
 	}
 
@@ -37,6 +49,7 @@ $(document).ready(function() {
 
 $("#start").click(function() {
 
+
 	createQuestions(questionBank[count]);
 	$("#splashScreen").css('display', 'none');
 	$("#questions").css('display', 'inherit');
@@ -47,13 +60,13 @@ $("#start").click(function() {
 
 function createQuestions(array) {
 
+	randomizeAnswers();
 	intervalID = setInterval(timer, 1000);
 	$("#snarf").css('background', '#FFF');
 	$("#text").html("<div><h4>" + array.text);
-	$("#answers").html("<div class='text-center btn btn-info btn-block' data-correct='true'>" + array.answer);
 
-	for (var i = 0; i < array.wrong.length; i++) {
-		$("#answers").append("<div class='text-center btn btn-info btn-block' data-correct='false'>" + array.wrong[i]);
+	for (var i = 0; i < array.answer.length; i++) {
+		$("#answers").append(array.answer[i]);
 	};
 
 	correct();
@@ -82,7 +95,7 @@ function correct() {
 
 		} else {
 			$(this).css('background', '#D9534F');
-			questionBank[count].correct = "AAAAAAAAGHHHHH![is cast into the gorge by an invisible force]";
+			questionBank[count].correct = "AAAAAAAAGHHHHH! [is cast into the gorge by an invisible force]";
 			count++;
 			clearInterval(intervalID);
 			time = 5;
@@ -102,6 +115,7 @@ function checkGameEnd() {
 	$("#gameOver").css('display', 'inherit');
 
 	} else {
+		$("#answers").empty();
 		nextQuestion();
 	}
 }
@@ -125,6 +139,7 @@ $("#restart").click(function() {
 		questionBank[i].correct = false;
 	}
 
+	$("#answers").empty();
 	$("#gameOver").css('display', 'none');
 	$("#splashScreen").css('display', 'inherit');
 
@@ -149,6 +164,11 @@ function timer() {
 	time--;
 };
 
+function randomizeAnswers() {
+	for (var i = 0; i < questionBank.length; i++) {
+		questionBank[i].answer.sort(function(a, b){return 0.5 - Math.random()});
+	}
+}
 
 
 
