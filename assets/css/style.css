@@ -1,35 +1,61 @@
-body {
-	text-align: center;
-}
-
-button {
-	text-align: center;
-	width: 200px;
-	margin-bottom: 5px;
-}
 
 #start {
-	margin-top: 8px;
+	margin-top: 10px;
 }
 
-#timer {
-	display: none;
-	margin-top: 100px;
+#restart {
+	margin-top: 10px;
 }
 
-#gameboard {
+#splashScreen {
 	display: inherit;
-}
-
-#gameboard {
 	margin-top: 150px;
 }
 
 #questions {
 	display: none;
-	margin-top: 25px;
+	margin-top: 150px;
+}
+
+#snarf {
+	background: #fff;
 }
 
 #text {
 	margin-bottom: 20px;
 }
+
+#gameOver {
+	display: none;
+	margin-top: 150px;
+}
+
+#timer {
+	visibility: hidden;
+}
+
+#img1 {
+	height: 400px;
+	background: url("../images/kingArthur.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+#img2 {
+	height: 400px;
+	background: url("../images/bridgeKeeper.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+

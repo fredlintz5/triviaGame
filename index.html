@@ -13,22 +13,54 @@
 </head>
 <body>
 	
-
-	<div id="timer"><h2>5</h2></div>
-	<div id="gameboard">
-		<h1>Trivia Game</h1>
-		<p>Answer the questions in the time allotted</p>
-		<p>Press the button below to start the game</p>
-		<button id="start">Start Game</button>
-	</div>
-
-	<div id="questions">
-		<div id="text" data-correct="true">
-			<div>Question will go here...</div>
+<div class="container text-center">
+	<div class="row" id="splashScreen">
+		<div class="col-sm-3 col-md-4"></div>
+		<div class="col-sm-6 col-md-4">
+			<h1>STOP!</h1>
+			<h5>Whoever approacheth the Bridge of Death must answer me these questions three, ere the other side he see.</h5>
+			<div class="btn btn-success" id="start">Start Game</div>
 		</div>
-
-		<div id="answers"></div>
+		<div class="col-sm-3 col-md-4"></div>
 	</div>
+	
+
+	<div class="row" id="questions">
+		<div class="col-sm-3 col-md-4"></div>
+		<div class="col-sm-6 col-md-4" id="snarf">
+			<div id="timer"><h1>00:05</h1></div>
+			<div id="text" data-correct="true"></div>
+
+			<div id="answers"></div>
+			<br>
+		</div>
+		<div class="col-sm-3 col-md-4"></div>
+	</div>
+
+	<div class="row" id="gameOver">
+		<div class="col-sm-3 col-md-4"></div>
+		<div class="col-sm-6 col-md-4">
+			<h2>RESULTS</h2>
+			<div id="results"></div>
+			<br>
+			<div class="btn btn-success" id="restart">Restart</div>
+		</div>
+		<div class="col-sm-3 col-md-4"></div>
+	</div>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-5" id="img1"></div>
+		<div class="col-xs-5" id="img2"></div>
+		<div class="col-xs-1"></div>		
+	</div>
+	
+
+</div>
+
+	
+
 	
 
 </body>
