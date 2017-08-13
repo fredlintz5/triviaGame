@@ -170,6 +170,23 @@ function randomizeAnswers() {
 	}
 }
 
+$("#img1").click(function() {
+
+	if ($("#keeperThoughts").css("display") === "block"); {
+		$("#keeperThoughts").css("display", "none");
+		$("#arthurThoughts").toggle();
+	}
+
+});
+
+$("#img2").click(function() {
+
+	if ($("#arthurThoughts").css("display") === "block"); {
+		$("#arthurThoughts").css("display", "none");
+		$("#keeperThoughts").toggle();
+	}
+});
+
 
 
 
